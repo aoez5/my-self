@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arzhel | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.5rem;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #9f78ff;
+    }
+    .section {
+      min-height: 100vh;
+      display: none;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section.active {
+      display: block;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #9f78ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    img.profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#support">Support</a>
+  </nav>  <section id="home" class="section active">
+    <h1>Hello, I'm Arzhel</h1>
+    <p>A passionate Web Developer at Meli Killua</p>
+    <img src="arzhel.png" alt="Arzhel Profile" class="profile">
+    <p>melikillua15@gmail.com</p>
+  </section>  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hi, I’m Arzhel — a passionate Web Developer with a love for backend magic.</p>
+    <p>At just 18, I specialize in crafting efficient and responsive web experiences using HTML, CSS, and JavaScript.</p>
+    <p>I enjoy transforming ideas into functional, elegant solutions through clean code. Always learning, always building — I'm driven by the desire to grow and innovate in the world of web development.</p>
+  </section>  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <p><strong>Age:</strong> 18</p>
+    <p><strong>Residence:</strong> Myanmar</p>
+    <p><strong>Email:</strong> melikillua15@gmail.com</p>
+    <p><strong>Freelance:</strong> Available</p>
+    <div style="margin-top: 2rem;">
+      <p>HTML: 90%</p>
+      <p>CSS: 80%</p>
+      <p>JavaScript: 70%</p>
+    </div>
+  </section>  <section id="support" class="section">
+    <h2>Need Support?</h2>
+    <p>Join our Discord server for help and community support.</p>
+    <a href="https://discord.gg/FyzEf8QQ" class="btn" target="_blank">Join Discord</a>
+  </section>  <script>
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll(".section");
+
+    function showSection(id) {
+      sections.forEach(section => {
+        section.classList.remove("active");
+        if (section.id === id) {
+          section.classList.add("active");
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        showSection(targetId);
+      });
+    });
+  </script></body>
+</html>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('bg.png') center/cover no-repeat;
+  }
+
+  .blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.1); /* အလင်းပြာ overlay */
+    backdrop-filter: blur(12px);
+    z-index: -1;
+  }
+</style>
+<body>
+  <div class="blur-overlay"></div>
+  <!-- အခြား content တွေ -->
+</body>
